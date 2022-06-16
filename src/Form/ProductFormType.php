@@ -11,10 +11,12 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\CategoryRepository;
 use App\Entity\Category;
+use App\Entity\Manufacturer;
 
 class ProductFormType extends AbstractType
 {
@@ -41,15 +43,11 @@ class ProductFormType extends AbstractType
             ->add('unitPrice', NumberType::class)
             ->add('quantity', IntegerType::class)
             ->add('description', TextareaType::class)
-            ->add('category_id', EntityType::class, [
+            ->add('category', EntityType::class, [
                 'class' => Category::class
             ])
-            ->add('manufacturer_id', ChoiceType::class, [
-                'choices' => [
-                    'Vinamilk' => "1",
-                    'Masan' => "2",
-                    'Sunhouse' => "3",
-                ],
+            ->add('manufacturer', EntityType::class, [
+                'class' => Manufacturer::class
             ])
             ->add('image', TextType::class);
     }

@@ -118,4 +118,5 @@ class ManufacturerController extends AbstractController
         );
         return $this->redirectToRoute('manufacturer_list');
     }
+
 }

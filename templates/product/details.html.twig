@@ -9,6 +9,8 @@
         <li class="list-group-item">Unit Price: {{ products.unitPrice }}</li>
         <li class="list-group-item">Quantity: {{ products.quantity }}</li>
         <li class="list-group-item">Description: {{ products.description }}</li>
+        <li class="list-group-item">Category: {{ products.category.name }}</li>
+        <li class="list-group-item">Manufacturer: {{ products.manufacturer.name }}</li>
         <li class="list-group-item">Image: <img src="{{ products.image }}" ></li>
     </ul>
 {% endblock %}

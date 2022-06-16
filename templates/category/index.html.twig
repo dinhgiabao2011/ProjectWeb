@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Category Name</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categorys %}
+                <tr>
+                    <th scope="row">{{ category.id }}</th>
+                    <td>{{ category.name }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        {#<a href="{{ path('category_details', {'id': category.id}) }} " class='btn btn-success'>View</a>#}
+                        {#<a href="{{ path('category_edit', {'id': category.id}) }}" class='btn btn-default'>Edit</a>#}
+                        {#<a href="{{ path('category_delete', {'id': category.id}) }}" class='btn btn-danger'>Delete</a>#}
+                        <a href="{{ path('category_details', {'id': category.id}) }} " class='btn btn-success'>View</a>
+                        <a href="{{ path('category_edit', {'id': category.id}) }}" class='btn btn-primary'>Edit</a>
+                        <a href="{{ path('category_delete', {'id': category.id}) }}" class='btn btn-danger'>Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

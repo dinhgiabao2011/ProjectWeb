@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="name">Name:</label>
+        {{ form_widget(form.name,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Category Name'
+            }
+        }) }}
+    </div>
+    <input type="submit" name="category_edit" value="Edit" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

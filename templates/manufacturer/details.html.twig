@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('manufacturer_list') }}" class="btn btn-default">Back to Manufacture List</a>
+    <hr/>
+    <h2 class="page-header">{{ manufacturers.name }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Address: {{ manufacturers.address }}</li>
+        <li class="list-group-item">Telephone: {{ manufacturers.telephone }}</li>
+        <li class="list-group-item">Email: {{ manufacturers.email }}</li>
+        <li class="list-group-item">Description: {{ manufacturers.description }}</li>
+    </ul>
+{% endblock %}

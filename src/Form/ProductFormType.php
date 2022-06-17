@@ -31,13 +31,6 @@ class ProductFormType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $e = $this->em->getManager();
-      
-        // Call CustomerRepo
-        $cateRepo = $e->getRepository(Category::class);
-        
-        // Call function
-        $result = $cateRepo->getCategory();
         $builder
             ->add('name', TextType::class)
             ->add('unitPrice', NumberType::class)

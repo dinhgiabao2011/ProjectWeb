@@ -56,7 +56,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category", name="category_list")
+     * @Route("/category/index", name="category_list")
      */
     public function listCategory()
     {

@@ -18,8 +18,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
-    #[ORM\Column(type: 'string')]
-    private $roles;
+    #[ORM\Column(type: 'json')]
+    private $roles = [];
 
     #[ORM\Column(type: 'string')]
     private $password;
@@ -54,17 +54,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @see UserInterface
      */
-    public function getRoles(): string
+    public function getRoles(): array
     {
-        // $roles = $this->roles;
-        // // guarantee every user at least has ROLE_USER
-        // $roles[] = 'ROLE_USER';
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
 
-        // return array_unique($roles);
-        return $this->roles;
+        return array_unique($roles);
     }
 
-    public function setRoles(string $roles): self
+    public function setRoles(array $roles): self
     {
         $this->roles = $roles;
 

@@ -43,11 +43,6 @@ class Category
         return $this;
     }
 
-    // public function __toString()
-    // {
-    //     return (string)$this->id;
-    // }
-
     /**
      * @return Collection<int, Product>
      */

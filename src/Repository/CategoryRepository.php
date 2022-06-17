@@ -39,19 +39,6 @@ class CategoryRepository extends ServiceEntityRepository
         }
     }
 
-    /**
-     * @return Category[]
-     */
-
-    public function getCategory()
-    {
-        return $this
-            ->createQueryBuilder('c')
-            ->orderBy('c.id','asc')
-            ->getQuery()
-            ->getResult();
-    }
-
 //    /**
 //     * @return Category[] Returns an array of Category objects
 //     */

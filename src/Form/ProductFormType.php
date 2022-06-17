@@ -49,7 +49,7 @@ class ProductFormType extends AbstractType
             ->add('manufacturer', EntityType::class, [
                 'class' => Manufacturer::class
             ])
-            ->add('image', TextType::class);
+            ->add('image', TextareaType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

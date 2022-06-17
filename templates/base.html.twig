@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
@@ -10,19 +10,20 @@
     <link rel="icon" href="../../favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/starter-template/">
     <title>{% block title %}Welcome!{% endblock %}</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/app.css">
         <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
         {% block stylesheets %}{% endblock %}
     </head>
-<body>
+<body style="background-image: url('https://tinyurl.com/yzrj4bhp'); background-repeat:no-repeat; background-size:100% 100%;">
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ path('product_home') }}">CLowns Store</a>
+    <a class="navbar-brand" href="{{ path('product_home') }}">Clowns Store</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,9 +58,9 @@
   </div>
 </nav>
 
-
-
-<div class ="container">
+<div class = "container" style="background-color: #DBEDDA; margin-top: 3%;">
+<!-- Carousel -->
+<div class ="container carousel" style="padding-top: 1.5%; padding-bottom: 3%; ">
     <div id="carouselExampleControls" class="carousel slide h-50" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active h-50">
@@ -81,38 +82,104 @@
         <span class="visually-hidden">Next</span>
     </button>
     </div>
+  </div>
+  <div>
+  <h1 style="text-align:center; padding: 2%;">Our Development Team Member</h1>
+  </div>
+
+<!-- team-member -->
+<div class = "container team-member">
+    <div class = "row">
+    <div class="card-group">
+  <div class="card col-sm" style="margin: 1.5% 1.5%;">
+    <img src="https://tinyurl.com/2kdcc3j2" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">Front-end Coppier</h3>
+      <h5 class="card-title">Doan Tran Vinh Kha</h5>
+      <p class="card-text">I'm the front-end developer who is very talented in using StackOverFlow.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card col-sm" style="margin: 1.5% 1.5%;">
+    <img src="https://tinyurl.com/3duwdr87" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h3 class="card-title">Back-end Duplicater</h3>
+      <h5 class="card-title">Dinh Gia Bao</h5>
+      <p class="card-text">I do not angry when people copy my source code because it is actually not my source code.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card col-sm" style="margin: 1.5% 1.5%;">
+    <img src="https://tinyurl.com/5n6u8twx" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h3 class="card-title">Full Stack Imitater</h3>
+      <h5 class="card-title">Nguyen Thi Khanh Nam </h5>
+      <p class="card-text">Look at my picture, this is how my code look like - Hillarious</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
 </div>
 
-<div class = "container">
-    <div class = "row">
-    <div class="card-deck"  style="display: inline-flex;" >
-  <div class="card col-sm" style="margin: 1.5% 1.5%;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white" >
+  <div class="container p-4" >
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius:20%; border: 2px solid white;"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+
+    <!-- Section: Social media -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+       This project is our team efforts, we have tried our best and hope to bring you the best experience!
+      </p>
+    </section>
   </div>
-  <div class="card col-sm" style="margin: 1.5% 1.5%;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="{{ path('product_home') }}">Triple Clowns</a>
   </div>
-  <div class="card col-sm" style="margin: 1.5% 1.5%;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-    </div>
-</div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
 <div class="container">
     <div class="row"> 
         <div class="col-md-12">

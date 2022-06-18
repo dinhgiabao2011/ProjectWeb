@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,9 +17,12 @@ class ProductController extends AbstractController
 {
     private $em;
 
-    public function __construct(ManagerRegistry $registry)
+    private $slugger;
+
+    public function __construct(ManagerRegistry $registry, SluggerInterface $slugger)
     {
         $this->em = $registry;
+        $this->slugger = $slugger;
     }
     
     #[Route('/product', name: 'product_list')]
@@ -68,7 +73,6 @@ class ProductController extends AbstractController
     public function saveChanges($form, $request, $product)
     {
         $form->handleRequest($request);
-        
         if ($form->isSubmitted() && $form->isValid()) {
             $product = $form->getData();
             $product_name = $product->getName();
@@ -76,7 +80,32 @@ class ProductController extends AbstractController
             $product_quantity = $product->getQuantity();
             $product_categoryId = (int)$product->getCategoryId();
             $product_manufacturerId = $product->getManufacturerId();
-            $product_image = $product->getImage();
+            // $product_image = $product->getImage();
+
+            $product_image = $form->get('image')->getData();
+
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($product_image) {
+                $originalFilename = pathinfo($product_image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $this->slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$product_image->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $product_image->move(
+                        $this->getParameter('product_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $product->setImage($newFilename);
+            }
             $em = $this->em->getManager();
             $em->persist($product);
             $em->flush();

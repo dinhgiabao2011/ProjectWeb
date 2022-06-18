@@ -11,6 +11,6 @@
         <li class="list-group-item">Description: {{ products.description }}</li>
         <li class="list-group-item">Category: {{ products.category.name }}</li>
         <li class="list-group-item">Manufacturer: {{ products.manufacturer.name }}</li>
-        <li class="list-group-item">Image: <img src="{{ products.image }}" ></li>
+        <li class="list-group-item">Image: <img src="{{ asset('uploads/products/'~products.image~'') }}"></li>
     </ul>
 {% endblock %}

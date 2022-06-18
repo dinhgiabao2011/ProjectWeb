@@ -19,13 +19,6 @@ class ProductController extends AbstractController
     {
         $this->em = $registry;
     }
-
-    #[Route('/product/base', name: 'product_home')]
-    public function goHome()
-    {
-        return $this->render('base.html.twig', [       
-        ]);
-    }
     
     #[Route('/product', name: 'product_list')]
     public function listProduct()

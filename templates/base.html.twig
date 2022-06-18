@@ -33,7 +33,7 @@
 			<!-- navbar -->
 			<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="{{ path('product_home') }}">Clowns Store</a>
+					<a class="navbar-brand" href="{{ path('app_home') }}">Clowns Store</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -43,11 +43,11 @@
 							<!-- Home Navbar -->
 							<li class="nav-item"></li>
 							<li>
-								<a class="nav-link" href="{{ path('product_home') }}">Home</a>
+								<a class="nav-link" href="{{ path('app_home') }}">Home</a>
 							</li>
 						</li>
 						<!-- End Home Navbar -->
-
+            {% if app.user %}
 						<!-- Product Navbar -->
 						<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
 							<ul class="navbar-nav">
@@ -56,9 +56,11 @@
 										Products
 									</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  {% if is_granted('ROLE_ADMIN') %}
 										<li>
 											<a class="dropdown-item" href="{{ path('product_create') }}">Add Product</a>
 										</li>
+                    {% endif %}
 										<li>
 											<a class="dropdown-item" href="{{ path('product_list') }}">View Product</a>
 										</li>
@@ -74,9 +76,11 @@
 										Categories
 									</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  {% if is_granted('ROLE_ADMIN') %}
 										<li>
 											<a class="dropdown-item" href="{{ path('category_create') }}">Add Category</a>
 										</li>
+                    {% endif %}
 										<li>
 											<a class="dropdown-item" href="{{ path('category_list') }}">View Category</a>
 										</li>
@@ -91,9 +95,11 @@
 										Manufacturer
 									</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  {% if is_granted('ROLE_ADMIN') %}
 										<li>
 											<a class="dropdown-item" href="#">Add Manufacturer</a>
 										</li>
+                    {% endif %}
 										<li>
 											<a class="dropdown-item" href="#">View Manufacturer</a>
 										</li>
@@ -101,14 +107,19 @@
 								</li>
 							</ul>
 							<!-- End Manufacturer Navbar -->
+              <button>
+						    <a class="dropdown-item" href="{{ path('app_logout') }}">Log Out</a>
+					    </button>
 						</ul>
 					</div>
+          {% else %}
 					<button>
 						<a class="dropdown-item" href="{{ path('app_login') }}">Login</a>
 					</button>
 					<button>	
 						<a class="dropdown-item" href="{{ path('app_register') }}">Register</a>
 					</button>
+          {% endif %}
 					<form class="d-flex">
 						<input class="form-control me-2" type="text" placeholder="Search">
 						<button class="btn btn-primary" type="button">Search</button>
@@ -258,7 +269,7 @@
 			<!-- Copyright -->
 			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
 				© 2022 Copyright:
-				<a class="text-white" href="{{ path('product_home') }}">Triple Clowns</a>
+				<a class="text-white" href="{{ path('app_home') }}">Triple Clowns</a>
 			</div>
 			<!-- Copyright -->
 		</footer>

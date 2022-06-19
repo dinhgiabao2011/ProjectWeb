@@ -50,22 +50,22 @@
 								<!-- Home Navbar -->
 								<li class="nav-item "></li>
 								<li>
-									<a class="nav-link text-dark" href="{{ path('app_home') }}">Home</a>
+									<a class="nav-link text-dark font-monospace" href="{{ path('app_home') }}">Home</a>
 								</li>
 							</ul>
 							<ul class="navbar-nav">
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<a class="nav-link dropdown-toggle text-dark font-monospace" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Products
 									</a>
 									<ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
 										{% if is_granted('ROLE_ADMIN') %}
 											<li>
-												<a class="dropdown-item" href="{{ path('product_create') }}">Add Product</a>
+												<a class="dropdown-item font-monospace" href="{{ path('product_create') }}">Add Product</a>
 											</li>
 										{% endif %}
 										<li>
-											<a class="dropdown-item" href="{{ path('product_list') }}">View Product</a>
+											<a class="dropdown-item font-monospace" href="{{ path('product_list') }}">View Product</a>
 										</li>
 									</ul>
 								</li>
@@ -75,17 +75,17 @@
 							<!-- Category Navbar -->
 							<ul class="navbar-nav">
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<a class="nav-link dropdown-toggle text-dark font-monospace" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Categories
 									</a>
 									<ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
 										{% if is_granted('ROLE_ADMIN') %}
 											<li>
-												<a class="dropdown-item" href="{{ path('category_create') }}">Add Category</a>
+												<a class="dropdown-item font-monospace" href="{{ path('category_create') }}">Add Category</a>
 											</li>
 										{% endif %}
 										<li>
-											<a class="dropdown-item" href="{{ path('category_list') }}">View Category</a>
+											<a class="dropdown-item font-monospace" href="{{ path('category_list') }}">View Category</a>
 										</li>
 									</ul>
 								</li>
@@ -94,39 +94,39 @@
 							<!-- Manufacturer Navbar -->
 							<ul class="navbar-nav">
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<a class="nav-link dropdown-toggle text-dark font-monospace" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Manufacturer
 									</a>
 									<ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
 										{% if is_granted('ROLE_ADMIN') %}
 											<li>
-												<a class="dropdown-item" href="#">Add Manufacturer</a>
+												<a class="dropdown-item font-monospace" href="#">Add Manufacturer</a>
 											</li>
 										{% endif %}
 										<li>
-											<a class="dropdown-item" href="#">View Manufacturer</a>
+											<a class="dropdown-item font-monospace" href="#">View Manufacturer</a>
 										</li>
 									</ul>
 								</li>
 							</ul>
 							<!-- End Manufacturer Navbar -->
 
-							<a class="nav-link text-dark" href="{{ path('app_logout') }}">Log Out</a>
+							<a class="nav-link text-dark font-monospace" href="{{ path('app_logout') }}">Log Out</a>
 
 						</ul>
 					{% else %}
 						<ul class="navbar-nav">
-							<a class="nav-link text-dark" href="{{ path('app_login') }}">Log In</a>
+							<a class="nav-link text-dark font-monospace" href="{{ path('app_login') }}">Log In</a>
 						</ul>
 						<ul class="navbar-nav">
-							<a class="nav-link text-dark" href="{{ path('app_register') }}">Register</a>
+							<a class="nav-link text-dark font-monospace" href="{{ path('app_register') }}">Register</a>
 						</ul>
 					{% endif %}
 				</div>
 			</div>
 			<form class="d-flex">
 				<input class="form-control me-2" type="text" placeholder="Search">
-				<button class="btn btn-outline-dark btn-sm" type="button">Search</button>
+				<button class="btn btn-outline-dark btn-sm font-monospace" type="button">Search</button>
 			</form>
 		</nav>
 
@@ -202,23 +202,31 @@
 			</div>
 		</div>
 	</body><!--container -->{% block javascripts %}{% endblock %}
-
-	<footer class="bg-dark text-center text-white">
-		<div class="containerp-4"><!-- Section: Social media --><sectionclass="mb-4"><!-- Facebook --><a class="btn btn-outline-light m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+	<hr style=" width:70%; position:relative; left:15%; border-top: 2px solid; color:#000000 ">
+	<footer class="bg-white text-center text-dark">
+		<div class="containerp-4"><!-- Section: Social media --><sectionclass="mb-4">
+				<!-- Facebook -->
+				<a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-facebook-f"></i>
-				</a><!-- Twitter --><a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius:20%; border: 2px solid white;">
+				</a><!-- Twitter --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius:20%; border: 2px solid white;">
 					<i class="fab fa-twitter"></i>
-				</a><!-- Google --><a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+				</a><!-- Google --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-google"></i>
-				</a><!-- Instagram --><a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+				</a><!-- Instagram --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-instagram"></i>
-				</a><!-- Linkedin --><a class="btn btn-outline-light  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+				</a><!-- Linkedin --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-linkedin-in"></i>
-				</a><!-- Github --><a class="btn btn-outline-light m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+				</a><!-- Github --><a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-github"></i>
 				</a>
 			</section><!-- Section: Social media --><!-- Section: Text --><section class="mb-4">
-				<p>This project is our team efforts, we have tried our best and hope to bring you the best experience!</p>
+				<p class="fw-bold">This project is our team efforts, we have tried our best and hope to bring you the best experience!</p>
 			</section>
-		</div><!-- Copyright --><div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2022 Copyright:<a class="text-white" href="{{ path('app_home') }}">Triple Clowns</a>
-		</div><!-- Copyright --></footer><!-- Footer --></html>
+		</div>
+		<!-- Copyright -->
+		<div class="text-center p-3 text-white" style="background-color:#000000;">© 2022 Copyright:
+			<a class="text-white" href="{{ path('app_home') }}">
+				Triple Clowns</a>
+		</div>
+		<!-- Copyright -->
+	</footer><!-- Footer --></html>

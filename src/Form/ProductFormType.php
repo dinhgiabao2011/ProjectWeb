@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\GreaterThan;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\Persistence\ManagerRegistry;
@@ -36,8 +37,14 @@ class ProductFormType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('unitPrice', NumberType::class)
-            ->add('quantity', IntegerType::class)
+            ->add('unitPrice', NumberType::class,[
+                'constraints' => new GreaterThan(array('value' => 0)),                
+                'attr' => array('min' => '0',)
+            ])
+            ->add('quantity', IntegerType::class,[
+                'constraints' => new GreaterThan(array('value' => 0)),                
+                'attr' => array('min' => '0',)
+            ])
             ->add('description', TextareaType::class)
             ->add('category', EntityType::class, [
                 'class' => Category::class
@@ -45,18 +52,9 @@ class ProductFormType extends AbstractType
             ->add('manufacturer', EntityType::class, [
                 'class' => Manufacturer::class
             ])
-            // ->add('image', TextareaType::class)
             ->add('image', FileType::class, [
-
-                // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
-
-                // make it optional so you don't have to re-upload the PDF file
-                // every time you edit the Product details
                 'required' => false,
-
-                // unmapped fields can't define their validation using annotations
-                // in the associated entity, so you can use the PHP constraint classes
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',

@@ -1,11 +1,12 @@
 body {
-    background-color: lightgray;
+    background-color: #ffff;
 }
 
-.btn-success{
-    font-weight: 10000900;
-}
 
-.sign-in-form{
+hr {
+    justify-content: center;
+    border-bottom: 1px solid hsla(0, 0%, 50%, 0.75);
     width: 50%;
-}
+  }
+
+  

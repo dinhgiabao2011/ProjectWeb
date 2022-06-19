@@ -136,13 +136,17 @@ class ProductController extends AbstractController
     {
         $em = $this->em->getManager();
         $product = $em->getRepository('App\Entity\Product')->find($id);
-        
+    
         $form = $this->createForm(ProductFormType::class, $product);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->em->getManager()->flush();
+    
+        if ($this->saveChanges($form, $request, $product)) {
+            $this->addFlash(
+                'notice',
+                'Product Edited'
+            );
             return $this->redirectToRoute('product_list');
         }
+
         return $this->render('product/edit.html.twig', [
             'form' => $form->createView()
         ]);

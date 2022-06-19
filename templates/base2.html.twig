@@ -17,6 +17,9 @@
 		{% block stylesheets %}
 			<link rel="stylesheet" href="{{asset('build/app.css')}}">
 		{% endblock %}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 		<link
 		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 		<!-- CSS only -->
@@ -31,7 +34,6 @@
 	<!-- Body -->
 
 	<body>
-
 		<!-- navbar -->
 		<nav class="navbar navbar-expand-md navbar-white bg-white container ">
 			<div class="container-fluid ">
@@ -132,9 +134,9 @@
 		<hr
 		style="position:relative; left:25%; border-width:2px;">
 		<!-- navbar -->
-		<div class="container">
+		<div class="">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-12" style="height:auto">
 					{% for flash_message in app.session.flashBag.get('notice') %}
 						<div class="alert alert-success">{{ flash_message }}</div>
 					{% endfor %}

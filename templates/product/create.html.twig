@@ -1,80 +1,86 @@
 {% extends 'base2.html.twig' %}
 {% block body %}
 	{{ form_start(form) }}
-	<div class="row" style="margin-top: 4%; margin-bottom: 5%;  value:auto;">
+	<div class="row" style=" margin-bottom:2%; margin-top:2%; value:auto;">
 
-		<div class="col-6 ">
+		<div class="col-6" style="margin-left:5%">
 			<img src="https://tinyurl.com/54z844cy" class="card-img-top" style="height:60%; object-fit:cover;" alt="...">
 		</div>
 
-		<div class="col-6 ">
-			<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
-				<div class="col-6" style="">
-					<label class="fw-bolder" for="name">Name:</label>
-					{{ form_widget(form.name,{
+		<div class="col-5 text-dark form-group" style="">
+
+			<div style="margin-top:15%">
+				<div class="" style="font-family: 'Bubblegum Sans', cursive; position: relative; left:20%; font-size:40px;">
+					Create A New Product
+				</div>
+				<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+					<div class="col-6" style="">
+						<label class="fw-bolder" for="name">Name:</label>
+						{{ form_widget(form.name,{
                     'attr':{
                         'class':'form-control',
                         'placeholder': 'Product name'
                     }
                 }) }}
-				</div>
-				<div class="col-6">
-					<label class="fw-bolder" for="unitPrice">Unit price:</label>
-					{{ form_widget(form.unitPrice,{
+					</div>
+					<div class="col-6">
+						<label class="fw-bolder" for="unitPrice">Unit price:</label>
+						{{ form_widget(form.unitPrice,{
                     'attr':{
                         'class':'form-control',
                         'placeholder': 'Unit price'
                     }
                 }) }}
+					</div>
 				</div>
-			</div>
-			<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
-				<div class="col-4">
-					<label class="fw-bolder" for="quantity">Quantity:</label>
-					{{ form_widget(form.quantity,{
+				<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+					<div class="col-4">
+						<label class="fw-bolder" for="quantity">Quantity:</label>
+						{{ form_widget(form.quantity,{
                     'attr':{
                         'class':'form-control',
                         'placeholder': 'Quantity'
                     }
                 }) }}
-				</div>
-				<div class="col-4">
-					<label class="fw-bolder" for="category">Category:</label>
-					{{ form_widget(form.category,{
+					</div>
+					<div class="col-4">
+						<label class="fw-bolder" for="category">Category:</label>
+						{{ form_widget(form.category,{
                     'attr':{
                         'class':'form-control'
                     }
                 }) }}
-				</div>
-				<div class="col-4">
-					<label class="fw-bolder" for="manufacturer">Manufacturer:</label>
-					{{ form_widget(form.manufacturer,{
+					</div>
+					<div class="col-4">
+						<label class="fw-bolder" for="manufacturer">Manufacturer:</label>
+						{{ form_widget(form.manufacturer,{
                     'attr':{
                         'class':'form-control'
                     }
                 }) }}
+					</div>
 				</div>
-			</div>
-			<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
-				<div class="col-12">
-					<label class="fw-bolder" for="description">Description:</label>
-					{{ form_widget(form.description,{
+				<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+					<div class="col-12">
+						<label class="fw-bolder" for="description">Description:</label>
+						{{ form_widget(form.description,{
                     'attr':{
                         'class':'form-control',
                         'placeholder': 'Description'
                     }
                 }) }}
-				</div>
-				<div class="col-12">
-					<label class="fw-bolder" for="image">Image:</label>
-					{{ form_widget(form.image,{
+					</div>
+					<div class="col-12">
+						<label class="fw-bolder" for="image">Image:</label>
+						{{ form_widget(form.image,{
                     'attr':{
                         'class':'form-control'
                     }
                 }) }}
+					</div>
 				</div>
 			</div>
-			<button class="btn btn-outline-dark btn-lg" style="float: right; font-size:20px;" type="submit" name="create_product" value="Create">
+			<button class="btn btn-outline-light btn-md" style="float: right; font-size:20px;" type="submit" name="create_product" value="Create">
 				Create</button>
 
 		</div>

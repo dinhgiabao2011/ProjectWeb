@@ -1,21 +1,21 @@
 {% extends 'base2.html.twig' %}
 {% block body %}
 	{{ form_start(form) }}
-	<div class="row" style=" margin-bottom:2%; margin-top:2%; value:auto;">
+	<div class="row"  style="  margin-bottom:2%; margin-top:1.5%; ">
 
-		<div class="col-6" style="margin-left:5%">
-			<img src="https://tinyurl.com/54z844cy" class="card-img-top" style="height:60%; object-fit:cover;" alt="...">
+		<div class="d-flex justify-content-center" >
+		<div class="col-4" style="margin-left: 5%">
+			<img src="https://tinyurl.com/54z844cy" class="card-img-top" style=" object-fit:cover; height:100%;" alt="...">
 		</div>
 
-		<div class="col-5 text-dark form-group" style="">
-
-			<div style="margin-top:15%">
-				<div class="" style="font-family: 'Bubblegum Sans', cursive; position: relative; left:20%; font-size:40px;">
+		<div class="col-6 text-white form-group" style="">	
+			<div class ="bg-dark" style="padding-top:15%;  height:100% ">
+				<div class="" style="font-family: 'Bubblegum Sans', cursive; margin-left:25%; font-size:45px;">
 					Create A New Product
 				</div>
-				<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
-					<div class="col-6" style="">
-						<label class="fw-bolder" for="name">Name:</label>
+				<div class="row" style="margin: 4% 2%;">
+					<div class="col-6" >
+						<label  style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="name">Name:</label>
 						{{ form_widget(form.name,{
                     'attr':{
                         'class':'form-control',
@@ -24,7 +24,7 @@
                 }) }}
 					</div>
 					<div class="col-6">
-						<label class="fw-bolder" for="unitPrice">Unit price:</label>
+						<label style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="unitPrice">Unit price:</label>
 						{{ form_widget(form.unitPrice,{
                     'attr':{
                         'class':'form-control',
@@ -33,9 +33,9 @@
                 }) }}
 					</div>
 				</div>
-				<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+				<div class="row" style="margin: 4% 2%;">
 					<div class="col-4">
-						<label class="fw-bolder" for="quantity">Quantity:</label>
+						<label style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="quantity">Quantity:</label>
 						{{ form_widget(form.quantity,{
                     'attr':{
                         'class':'form-control',
@@ -44,7 +44,7 @@
                 }) }}
 					</div>
 					<div class="col-4">
-						<label class="fw-bolder" for="category">Category:</label>
+						<label style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="category">Category:</label>
 						{{ form_widget(form.category,{
                     'attr':{
                         'class':'form-control'
@@ -52,7 +52,7 @@
                 }) }}
 					</div>
 					<div class="col-4">
-						<label class="fw-bolder" for="manufacturer">Manufacturer:</label>
+						<label style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="manufacturer">Manufacturer:</label>
 						{{ form_widget(form.manufacturer,{
                     'attr':{
                         'class':'form-control'
@@ -60,9 +60,9 @@
                 }) }}
 					</div>
 				</div>
-				<div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+				<div class="row" style="margin: 4% 2%;">
 					<div class="col-12">
-						<label class="fw-bolder" for="description">Description:</label>
+						<label style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="description">Description:</label>
 						{{ form_widget(form.description,{
                     'attr':{
                         'class':'form-control',
@@ -70,21 +70,29 @@
                     }
                 }) }}
 					</div>
-					<div class="col-12">
-						<label class="fw-bolder" for="image">Image:</label>
+					<div class="col-12 " style="margin-top: 4% ;">
+						<label style="font-family: 'Bubblegum Sans', cursive; font-size:25px;"  for="image">Image:</label>
 						{{ form_widget(form.image,{
                     'attr':{
                         'class':'form-control'
                     }
                 }) }}
 					</div>
+					
 				</div>
+				<div class="d-flex justify-content-around">
+				<a href="{{ path('app_home') }}"  class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style=" float: left; border: solid 2px white; margin-top: 4%;  font-size:25px; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+					 Go Back</a>
+					 <button class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Click To Add" style=" float: right;  margin-top: 4%; border: solid 2px white; font-size:25px; font-family: 'Bubblegum Sans', cursive;" type="submit" name="create_product" value="Create">
+					Create</button>
+				</div>
+				
 			</div>
-			<button class="btn btn-outline-light btn-md" style="float: right; font-size:20px;" type="submit" name="create_product" value="Create">
-				Create</button>
-
+			
+			
+			
 		</div>
-
+		</div>
 	</div>
 
 	{{ form_end(form) }}

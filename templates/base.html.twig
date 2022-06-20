@@ -100,11 +100,11 @@
 									<ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
 										{% if is_granted('ROLE_ADMIN') %}
 											<li>
-												<a class="dropdown-item fs-5" href="#">Add Manufacturer</a>
+												<a class="dropdown-item fs-5" href="{{ path('manufacturer_create') }}">Add Manufacturer</a>
 											</li>
 										{% endif %}
 										<li>
-											<a class="dropdown-item fs-5 " href="#">View Manufacturer</a>
+											<a class="dropdown-item fs-5 " href="{{ path('manufacturer_list') }}">View Manufacturer</a>
 										</li>
 									</ul>
 								</li>

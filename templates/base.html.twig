@@ -131,11 +131,10 @@
 			</form>
 		</nav>
 		{% if app.user %}
-			<div class="text-dark mb-3">
-				You are logged in as
-				{{ app.user.userIdentifier }},
-				<a href="{{ path('app_logout') }}">Logout</a>
-			</div>
+		<div class="text-center">
+			<div style="font-family: 'Bubblegum Sans', cursive; font-size:1.1vw;" class="d-inline text-dark ">You are logging with the 
+			<div style="font-family: 'Bubblegum Sans', cursive;" class="d-inline text-dark fw-bolder">{{ app.user.userIdentifier }}</div> account</div>
+		</div>	
 		{% endif %}
 		<hr style=" width:50%; position:relative; left:25%; border-top: 2px solid; color:#000000 ">
 		<!-- navbar -->
@@ -158,36 +157,35 @@
 				</div>
 			</div>
 			<div>
-				<h1 style="text-align:center; padding: 2%;">Our Development Team Member</h1>
+				<h1 style="text-align:center; padding: 2%; font-family: 'Bubblegum Sans', cursive; font-size:3vw;">Our Development Team Members</h1>
 			</div><!-- team-member --><div class="container team-member">
 				<div class="row">
-					<div class="card-group ">
-						<div class="card col-sm" style="margin: 1.5% 1.5%; border:none;">
-							<img src="https://tinyurl.com/2kdcc3j2" class="card-img-top" style="border-radius:50%;" alt="..."><div class="card-body">
-								<h3 class="card-title">Front-end Coppier</h3>
-								<h5 class="card-title">Doan Tran Vinh Kha</h5>
-								<p class="card-text">I'm the front-end developer who is very talented in using StackOverFlow.</p>
-								<p class="card-text">
-									<small class="text-muted">Last updated 3 mins ago</small>
+					<div class="card-group">
+						<div onmouseover="cardOver(this)" onmouseout="cardOut(this)" class="card col-sm" style="background-color:#212529; color:#ffffff;margin: 1.5% 1.5%; border:solid 1px; border-color:#DCDCDC;border-radius:13px;">
+							<img src="https://tinyurl.com/2kdcc3j2" class="card-img-top" style="border-radius:50%; display: block; margin:4% auto;width:90%;"  alt="..."><div class="card-body">
+								<h2 class="card-title fw-bold">Front-end Coppier</h2>
+								<h4 class="card-title" style="margin-bottom:5%;">Doan Tran Vinh Kha</h4>
+								<p class="card-text">I'm the front-end developer who is very talented in using StackOverFlow, GitHub and Google</p>								
+								
 								</p>
 							</div>
 						</div>
-						<div class="card col-sm" style="margin: 1.5% 1.5%; border:none;"><img src="https://tinyurl.com/3duwdr87" class="card-img-top" style="border-radius:50%;" alt="..."><div class="card-body">
-								<h3 class="card-title">Back-end Duplicater</h3>
-								<h5 class="card-title">Dinh Gia Bao</h5>
-								<p class="card-text">I do not angry when people copy my source code because it is actually not my source code.</p>
-								<p class="card-text">
-									<small class="text-muted">Last updated 3 mins ago</small>
+						<div onmouseover="cardOver(this)" onmouseout="cardOut(this)" class="card col-sm" style="background-color:#212529; color:#ffffff;margin: 1.5% 1.5%; border:solid 1px; border-color:#DCDCDC;border-radius:13px;">
+						<img style="border-radius:50%; display: block; margin:4% auto;width:90%;" src="https://tinyurl.com/3duwdr87" class="card-img-top" style="border-radius:50%;" alt="..."><div class="card-body">
+								<h2 class="card-title fw-bold">Back-end Duplicator</h2>
+								<h4 class="card-title " style="margin-bottom:5%;" >Dinh Gia Bao</h4>
+								<p class="card-text">I am not angry when people copy my source code without my permission because it is actually not my source code.</p>
+								
+				
 								</p>
 							</div>
 						</div>
-						<div class="card col-sm" style="margin: 1.5% 1.5%;border:none;"><img src="https://tinyurl.com/5n6u8twx" class="card-img-top" style="border-radius:50%;" alt="..."><div class="card-body">
-								<h3 class="card-title">Full Stack Imitater</h3>
-								<h5 class="card-title">Nguyen Thi Khanh Nam
-								</h5>
-								<p class="card-text">Look at my picture, this is how my code look like - Hillarious</p>
-								<p class="card-text">
-									<small class="text-muted">Last updated 3 mins ago</small>
+						<div onmouseover="cardOver(this)" onmouseout="cardOut(this)" class="card col-sm" style="background-color:#212529; color:#ffffff;margin: 1.5% 1.5%; border:solid 1px; border-color:#DCDCDC;border-radius:13px;">
+						<img style="border-radius:50%; display: block; margin:4% auto;width:90%;" src="https://tinyurl.com/5n6u8twx" class="card-img-top" style="border-radius:50%;" alt="..."><div class="card-body">
+								<h2 class="card-title fw-bold">Full Stack Imitator</h2>
+								<h4 class="card-title" style="margin-bottom:5%;" >Nguyen Thi Khanh Nam</h4>
+								<p class="card-text">Look at my picture, this is how my code look like</p>
+								
 								</p>
 							</div>
 						</div>
@@ -209,8 +207,9 @@
 			</div>
 		</div>
 	</body><!--container -->{% block javascripts %}{% endblock %}
-	<hr style=" width:70%; position:relative; left:15%; border-top: 2px solid; color:#000000 ">
+	
 	<footer class="bg-white text-center text-dark">
+	<hr style=" width:70%; position:relative; left:15%; border-top: 2px solid; color:#000000 ">
 		<div class="containerp-4"><!-- Section: Social media --><sectionclass="mb-4">
 				<!-- Facebook -->
 				<a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
@@ -223,12 +222,13 @@
 					<i class="fab fa-instagram"></i>
 				</a><!-- Linkedin --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-linkedin-in"></i>
-				</a><!-- Github --><a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+				</a><!-- Github --><a class="btn btn-outline-dark m-1" href="https://github.com/dinhgiabao2011/ProjectWeb" role="button" style="border-radius: 20%; border: 2px solid white;">
 					<i class="fab fa-github"></i>
 				</a>
 			</section><!-- Section: Social media --><!-- Section: Text --><section class="mb-4">
-				<p class="fw-bold">This project is our team efforts, we have tried our best and hope to bring you the best experience!</p>
+				<p class="fw-bold " style="font-family: 'Bubblegum Sans', cursive; font-size:1.2vw">This project is our team efforts, we have tried our best and hope to bring you the best experience!</p>
 			</section>
+
 		</div>
 		<!-- Copyright -->
 		<div class="text-center p-3 text-white" style="background-color:#000000;">© 2022 Copyright:
@@ -238,7 +238,7 @@
 		<!-- Copyright -->
 	</footer><!-- Footer --></html>
 <script>
-	function navItemOver(x) {
+function navItemOver(x) {
 x.style.backgroundColor = '#000';
 x.style.color = "#ffffff";
 x.style.borderRadius = "16px";
@@ -247,5 +247,21 @@ x.style.borderRadius = "16px";
 function navItemOut(x) {
 x.style.backgroundColor = '#ffffff';
 x.style.color = '#000';
+}
+
+function cardOver(x) {
+x.style.backgroundColor = '#D8D8D8';
+x.style.color = '#212529';
+x.style.transform = "translateY(-7%)";
+x.style.transitionDuration ="0.5s";
+x.style.boxShadow =" 3px 8px 6px #909090";
+}
+
+function cardOut(x) {
+x.style.backgroundColor = '#212529';
+x.style.color = '#ffffff';
+x.style.transform = "translateY(0%)";
+x.style.transitionDuration ="1s";
+x.style.boxShadow =" 0px 0px 0px #909090";
 }
 </script>

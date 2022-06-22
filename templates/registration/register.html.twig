@@ -8,7 +8,6 @@
 			<div class="row d-flex justify-content-center align-items-center h-100 ">
 				<div class="col-lg-8 white ">
 					<div class="card border border-white">
-
 						<div class="card-body p-4 p-md-5 bg-dark" style="border-bottom-left-radius: .3rem; border-top-left-radius: .3rem; border-top-right-radius: .3rem;border-bottom-right-radius: .3rem;">
 							<div class="text-center text-white text-center" style="font-family: 'Bubblegum Sans', cursive;margin-bottom:2%; font-size:3rem;">Register Form</div>
 							<form class="px-md-2">
@@ -29,9 +28,9 @@
                                             }) }}
 									</div>
 								</div>
-								<div style="margin-left:23%;" class="col-9 form-outline mb-4">
+								<div style="margin-left:20%;" class="form-outline mb-4">
 									<div class="">
-										<label class="text-white" style="font-family: 'Bubblegum Sans', cursive; font-size:1.2vw;" for="name">
+										<label class="text-white" style="font-family: 'Bubblegum Sans', cursive; font-size:120%;" for="name">
 											{{ form_row(registrationForm.agreeTerms,{
                                             'attr':{
                                                 'class':'form-control'            
@@ -42,10 +41,13 @@
 
 									</div>
 								</div>
-
-								<a href="{{ path('app_register') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style="border-radius:14px; float: left; border: solid 2px white; margin-bottom: 6%; margin-left:20%;  font-size:2vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+								<div class="text-center" style="margin-bottom:5%;">
+									<div class="d-inline text-white text-center" style=" font-size:1vw;">Already have an account?</div> 
+									<a href="{{ path('app_login') }}" onmouseover="this.style.color='#D3D3D3'" onmouseout="this.style.color='#ffffff'" class="d-inline text-center list-group-item fw-bold"  style="margin-left:.5%; color:#ffffff; font-family: 'Bubblegum Sans', cursive; font-size:1.2vw;">Sign In</a>
+								</div>
+								<a href="{{ path('app_home') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style="border-radius:14px; float: left; border: solid 2px white; margin-bottom: 6%; margin-left:20%;  font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
 									Go Back</a>
-								<input class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Sign Up" style=" border-radius:14px; float: right; margin-right:20%; margin-bottom: 6%; border: solid 2px white; font-size:2vw; font-family: 'Bubblegum Sans', cursive;" type="submit" value="Register"></input>
+								<input class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Sign Up" style=" border-radius:14px; float: right; margin-right:20%; margin-bottom: 6%; border: solid 2px white; font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" type="submit" value="Register"></input>
 
 						</form>
 					</div>
@@ -54,4 +56,17 @@
 		</div>
 	</div>
 </section>
+<script>
+	function navItemOver(x) {
+x.style.backgroundColor = '#ffffff';
+x.style.color = "#000";
+x.style.borderRadius = "16px";
+}
+
+function navItemOut(x) {
+x.style.backgroundColor = '#000';
+x.style.color = '#ffffff';
+}
+</script>
 {{ form_end(registrationForm) }}{% endblock %}
+

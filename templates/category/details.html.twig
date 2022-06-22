@@ -1,7 +1,22 @@
 {% extends 'base2.html.twig' %}
 
 {% block body %}
-    <a href="{{ path('category_list') }}" class="btn btn-default">Back to Category List</a>
-    <hr/>
-    <h2 class="page-header">{{ categorys.name }}</h2>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="text-center text-dark text-center" style="font-family: 'Bubblegum Sans', cursive;margin-bottom:2%; font-size:4.5rem;">Category</div>
+
+			<div class="bg-dark text-white col-md-5 ;" style="border-radius:13px; margin-left:30%;">
+
+				<h1 class="d-block text-uppercase fw-bolder text-center" style="font-family: 'Bubblegum Sans', cursive; margin-left:5%; margin-bottom:3%; margin-top:6%; font-size:3vw; ">{{ categorys.name }}</h1>
+
+				<div class="action d-flex justify-content-center">
+					<a href="{{ path('category_list') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style=" border-radius:14px; float: left; border: solid 2px white; margin-bottom: 2%;margin-top: 2%;  font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+						Go Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

@@ -47,10 +47,10 @@
 						<!-- Product Navbar -->
 						<div class="collapse navbar-collapse d-flex justify-content-around " id="navbarNavDarkDropdown">
 							<ul
-								class="navbar-nav" >
+								class="navbar-nav">
 								<!-- Home Navbar -->
-								<li >
-									<a class="nav-link fs-4" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)"  style="font-family: 'Bubblegum Sans', cursive; color:#000;" id="navbarElement" href="{{ path('app_home') }}">Home</a>
+								<li>
+									<a class="nav-link fs-4" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" id="navbarElement" href="{{ path('app_home') }}">Home</a>
 								</li>
 							</ul>
 							<ul class="navbar-nav">
@@ -85,7 +85,7 @@
 											</li>
 										{% endif %}
 										<li>
-											<a class=" text-center dropdown-item fs-5" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)"style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('category_list') }}">View Category</a>
+											<a class=" text-center dropdown-item fs-5" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('category_list') }}">View Category</a>
 										</li>
 									</ul>
 								</li>
@@ -111,7 +111,7 @@
 							</ul>
 							<!-- End Manufacturer Navbar -->
 							<ul class="navbar-nav">
-							<a class="nav-link  fs-4 " onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('app_logout') }}">Log Out</a>
+								<a class="nav-link  fs-4 " onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('app_logout') }}">Log Out</a>
 							</ul>
 
 						</ul>
@@ -131,64 +131,46 @@
 			</form>
 		</nav>
 
-		<hr style=" width:50%; position:relative; left:25%; border-top: 2px solid; color:#000000 ">
-		<!-- navbar -->
+		<hr style=" width:50%; position:relative; left:25%; border-top: 2px solid; color:#000000 "><!-- navbar -->
 		<!-- Carousel -->
-		</div>
-		<div class="">
-			<div class="row">
-				<div class="col-md-12">
-					{% for flash_message in app.session.flashBag.get('notice') %}
-						<div class="alert alert-success">{{ flash_message }}</div>
-					{% endfor %}
-					{% for flash_message in app.session.flashBag.get('error') %}
-						<div class="alert alert-danger">{{ flash_message }}</div>
-					{% endfor %}
-					{% block body %}{% endblock %}
-				</div>
-			</div>
-		</div>
-	</body><!--container -->{% block javascripts %}{% endblock %}
-	<hr style=" width:50%; position:relative; left:25%; border-top: 2px solid; color:#000000 ">
-	<footer class="bg-white text-center text-dark">
-		<div class="containerp-4"><!-- Section: Social media --><sectionclass="mb-4">
-				<!-- Facebook -->
-				<a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
-					<i class="fab fa-facebook-f"></i>
-				</a><!-- Twitter --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius:20%; border: 2px solid white;">
-					<i class="fab fa-twitter"></i>
-				</a><!-- Google --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
-					<i class="fab fa-google"></i>
-				</a><!-- Instagram --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
-					<i class="fab fa-instagram"></i>
-				</a><!-- Linkedin --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
-					<i class="fab fa-linkedin-in"></i>
-				</a><!-- Github --><a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
-					<i class="fab fa-github"></i>
-				</a>
-			</section><!-- Section: Social media --><!-- Section: Text --><section class="mb-4">
-				<p class="fw-bold">This project is our team efforts, we have tried our best and hope to bring you the best experience!</p>
-			</section>
-		</div>
-		<!-- Copyright -->
-		<div class="text-center p-3 text-white" style="background-color:#000000;">© 2022 Copyright:
-			<a class="text-white" href="{{ path('app_home') }}">
-				Triple Clowns</a>
-		</div>
-		<!-- Copyright -->
-	</footer><!-- Footer --></html>
-<script>
-function navItemOver(x) {
-	x.style.backgroundColor='#000';
-	x.style.color="#ffffff";
-	x.style.borderRadius="16px";
+	</body>
+</html></div><div class="">
+<div class="row">
+	<div class="col-md-12">
+		{% for flash_message in app.session.flashBag.get('notice') %}
+			<div class="alert alert-success">{{ flash_message }}</div>
+		{% endfor %}
+		{% for flash_message in app.session.flashBag.get('error') %}
+			<div class="alert alert-danger">{{ flash_message }}</div>
+		{% endfor %}
+		{% block body %}{% endblock %}
+	</div>
+</div></div></body><!--container -->{% block javascripts %}{% endblock %}<footer class="bg-white text-center text-dark"><hr style=" width:50%; position:relative; left:25%; border-top: 2px solid; color:#000000 "><div class="containerp-4"><!-- Section: Social media --><sectionclass="mb-4">
+	<!-- Facebook -->
+	<a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+		<i class="fab fa-facebook-f"></i>
+	</a><!-- Twitter --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius:20%; border: 2px solid white;">
+		<i class="fab fa-twitter"></i>
+	</a><!-- Google --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+		<i class="fab fa-google"></i>
+	</a><!-- Instagram --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+		<i class="fab fa-instagram"></i>
+	</a><!-- Linkedin --><a class="btn btn-outline-dark  m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+		<i class="fab fa-linkedin-in"></i>
+	</a><!-- Github --><a class="btn btn-outline-dark m-1" href="#!" role="button" style="border-radius: 20%; border: 2px solid white;">
+		<i class="fab fa-github"></i>
+	</a>
+</section><!-- Section: Social media --><!-- Section: Text --><section class="mb-4">
+	<p class="fw-bold">This project is our team efforts, we have tried our best and hope to bring you the best experience!</p>
+</section></div><!-- Copyright --><div class="text-center p-3 text-white" style="background-color:#000000;">© 2022 Copyright:
+<a class="text-white" href="{{ path('app_home') }}">
+	Triple Clowns</a></div><!-- Copyright --></footer><!-- Footer --></html><script>function navItemOver(x) {
+x.style.backgroundColor = '#000';
+x.style.color = "#ffffff";
+x.style.borderRadius = "16px";
 }
 
 function navItemOut(x) {
-	x.style.backgroundColor='#ffffff';
-	x.style.color='#000';
-}
-</script>
-
-
-
+x.style.backgroundColor = '#ffffff';
+x.style.color = '#000';
+}</script>

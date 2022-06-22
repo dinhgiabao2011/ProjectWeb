@@ -1,13 +1,46 @@
 {% extends 'base2.html.twig' %}
 
 {% block body %}
-    <a href="{{ path('manufacturer_list') }}" class="btn btn-default">Back to Manufacture List</a>
-    <hr/>
-    <h2 class="page-header">{{ manufacturers.name }}</h2>
-    <ul class="list-group">
-        <li class="list-group-item">Address: {{ manufacturers.address }}</li>
-        <li class="list-group-item">Telephone: {{ manufacturers.telephone }}</li>
-        <li class="list-group-item">Email: {{ manufacturers.email }}</li>
-        <li class="list-group-item">Description: {{ manufacturers.description }}</li>
-    </ul>
+	<div class="container">
+
+		<div class="row">
+
+			<div class="text-center text-dark" style="font-family: 'Bubblegum Sans', cursive;margin-bottom:2%; font-size:4.5rem;">Company Information</div>
+
+			<div class="bg-dark text-white col-md-5 ;" style="border-radius:13px; margin-left:30%;">
+
+				<h1 class="d-block text-uppercase fw-bolder " style="font-family: 'Bubblegum Sans', cursive; margin-left:5%; margin-bottom:3%; margin-top:6%; font-size:3vw; ">{{ manufacturers.name }}</h1>
+
+				<li class=" d-block text-wrap text-break" style=" font-family: 'Bubblegum Sans', cursive;margin-left:5%; margin-bottom:5%;font-size:1.2vw; width: 95%;">{{ manufacturers.description }}</li>
+
+				<div class=" row row-cols-lg-auto g3 align-items-center" stlye="font-family: 'Bubblegum Sans', cursive; ">
+					<h4 class=" d-block text-uppercase fw-bold " style="font-family: 'Bubblegum Sans', cursive;margin-left:5%;margin-bottom:3%;">Address:</h4>
+					<h4 style="margin-bottom:3%;font-family: 'Bubblegum Sans', cursive;color: #FFFACD">
+						{{ manufacturers.address }}
+						VND</h4>
+				</div>
+
+				<div class=" row row-cols-lg-auto g3 align-items-center" stlye="font-family: 'Bubblegum Sans', cursive; margin-bottom:5%;">
+
+					<h4 class=" d-block text-uppercase fw-bold " style="font-family: 'Bubblegum Sans', cursive;margin-left:5%;margin-bottom:3%;">Telephone:</h4>
+					<h4 style="margin-bottom:3%;font-family: 'Bubblegum Sans', cursive;">
+						{{ manufacturers.telephone }}
+					</h4>
+				</div>
+
+				<div class=" row row-cols-lg-auto g3 align-items-center" stlye="font-family: 'Bubblegum Sans', cursive; margin-bottom:5%;">
+
+					<h4 class=" d-block text-uppercase fw-bold " style="font-family: 'Bubblegum Sans', cursive;margin-left:5%;margin-bottom:3%;">Email:</h4>
+					<h4 style=" margin-bottom:3%;font-family: 'Bubblegum Sans', cursive;">
+						{{ manufacturers.email }}
+					</h4>
+				</div>
+
+				<div class="action d-flex justify-content-center">
+					<a href="{{ path('manufacturer_list') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style=" border-radius:14px; float: left; border: solid 2px white; margin-bottom: 2%;margin-top: 2%;  font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+						Go Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

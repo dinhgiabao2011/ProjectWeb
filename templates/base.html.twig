@@ -47,10 +47,10 @@
 						<!-- Product Navbar -->
 						<div class="collapse navbar-collapse d-flex justify-content-around " id="navbarNavDarkDropdown">
 							<ul
-								class="navbar-nav" >
+								class="navbar-nav">
 								<!-- Home Navbar -->
-								<li >
-									<a class="nav-link fs-4" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)"  style="font-family: 'Bubblegum Sans', cursive; color:#000;" id="navbarElement" href="{{ path('app_home') }}">Home</a>
+								<li>
+									<a class="nav-link fs-4" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" id="navbarElement" href="{{ path('app_home') }}">Home</a>
 								</li>
 							</ul>
 							<ul class="navbar-nav">
@@ -85,7 +85,7 @@
 											</li>
 										{% endif %}
 										<li>
-											<a class=" text-center dropdown-item fs-5" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)"style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('category_list') }}">View Category</a>
+											<a class=" text-center dropdown-item fs-5" onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('category_list') }}">View Category</a>
 										</li>
 									</ul>
 								</li>
@@ -111,7 +111,7 @@
 							</ul>
 							<!-- End Manufacturer Navbar -->
 							<ul class="navbar-nav">
-							<a class="nav-link  fs-4 " onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('app_logout') }}">Log Out</a>
+								<a class="nav-link  fs-4 " onmouseover="navItemOver(this)" onmouseout="navItemOut(this)" style="font-family: 'Bubblegum Sans', cursive; color:#000;" href="{{ path('app_logout') }}">Log Out</a>
 							</ul>
 
 						</ul>
@@ -130,7 +130,13 @@
 				<button class="btn btn-outline-dark btn-sm " style="font-family: 'Bubblegum Sans', cursive;" type="button">Search</button>
 			</form>
 		</nav>
-
+		{% if app.user %}
+			<div class="text-dark mb-3">
+				You are logged in as
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
+		{% endif %}
 		<hr style=" width:50%; position:relative; left:25%; border-top: 2px solid; color:#000000 ">
 		<!-- navbar -->
 		<!-- Carousel -->
@@ -232,17 +238,14 @@
 		<!-- Copyright -->
 	</footer><!-- Footer --></html>
 <script>
-function navItemOver(x) {
-	x.style.backgroundColor='#000';
-	x.style.color="#ffffff";
-	x.style.borderRadius="16px";
+	function navItemOver(x) {
+x.style.backgroundColor = '#000';
+x.style.color = "#ffffff";
+x.style.borderRadius = "16px";
 }
 
 function navItemOut(x) {
-	x.style.backgroundColor='#ffffff';
-	x.style.color='#000';
+x.style.backgroundColor = '#ffffff';
+x.style.color = '#000';
 }
 </script>
-
-
-

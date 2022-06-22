@@ -1,38 +1,35 @@
+{% extends 'base2.html.twig' %}
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	<form method="post">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+		<section class="h-100 h-custom bg-light bg-white">
+			<div class="container py-5 h-100 ">
+				<div class="row d-flex justify-content-center align-items-center h-100 ">
+					<div class="col-lg-8 white ">
+						<div class="card border border-white">
+							<div class="card-body p-4 p-md-5 bg-dark" style="border-bottom-left-radius: .3rem; border-top-left-radius: .3rem; border-top-right-radius: .3rem;border-bottom-right-radius: .3rem;">
+								<div class="text-center text-white text-center" style="font-family: 'Bubblegum Sans', cursive;margin-bottom:2%; font-size:3rem;">Register Form</div>
+								<form class="px-md-2">
+									<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+									<label for="inputEmail">Email</label>
+									<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+									<label for="inputPassword">Password</label>
+									<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+									<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+									<a href="{{ path('app_register') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style="border-radius:14px; float: left; border: solid 2px white; margin-bottom: 6%; margin-left:20%;  font-size:2vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+										Go Back</a>
+									<input class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Sign Up" style=" border-radius:14px; float: right; margin-right:20%; margin-bottom: 6%; border: solid 2px white; font-size:2vw; font-family: 'Bubblegum Sans', cursive;" type="submit" value="Register"></input>
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
-{% endblock %}
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</form>{% endblock %}

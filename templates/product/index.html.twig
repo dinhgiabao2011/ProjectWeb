@@ -2,7 +2,6 @@
 
 {% block body %}
 
-
 	<div class="bs-example" data-example-id="striped-table " style="margin-bottom:2%;margin-top:2%;">
 
 		<table class="  table-default table-hover table-responsive table-striped container" style="font-family: 'Bubblegum Sans', cursive; font-size:1.2vw;">
@@ -13,7 +12,7 @@
 					<th style="text-align:center;">Unit Price</th>
 					<th style="text-align:center;">Quantity</th>
 					<th style="text-align:center;">Description</th>
-					<th style="text-align:center;"></th>
+					<th style="text-align:center;">Operation</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,22 +21,29 @@
 						<th style="text-align:center;">{{ product.id }}</th>
 						<td style="text-align:center;">{{ product.name }}</td>
 						<td style="text-align:center;">{{ product.unitPrice }}</td>
-						<td style="text-align:center;">{{ product.quantity }}</td>
-						<td>{{ product.description }}</td>
+						<td  style="text-align:center;">{{ product.quantity }}</td>
+						<td class="text-wrap text-break" style="width: 25%;">{{ product.description }}</td>
 
+					{% if app.user %}
+					
 						<td>
 							<div class="d-flex justify-content-around">
-								<a data-bs-toggle="tooltip" data-bs-placement="right" href="{{ path('product_details', {'id': product.id}) }}" style="padding-top:4%; font-size:1.7vw;" onmouseover="this.style.color='#008000'" onmouseout="this.style.color='#000'">
-									<i class="bi bi-pencil-fill"></i>
+							
+								<a data-bs-toggle="tooltip" data-bs-placement="right" title="View" href="{{ path('product_details', {'id': product.id}) }}" style=" color:#000; padding-top:4%; font-size:1.5vw;" onmouseover="this.style.color='#008000'" onmouseout="this.style.color='#000'">
+									<i class="bi bi-file-text-fill" style=""></i>
+								</a>
+							{% if is_granted('ROLE_ADMIN') %}
+								<a data-bs-toggle="tooltip" title="Edit" data-bs-placement="right" href="{{ path('product_edit', {'id': product.id}) }}" style="color:#000;padding-top:4%; font-size:1.5vw;" onmouseover="this.style.color='#DED63E'" onmouseout="this.style.color='#000'">
+									<i class="bi bi-pencil-square"></i>
 								</a>
 
-								<a data-bs-toggle="tooltip" data-bs-placement="right" href="{{ path('product_edit', {'id': product.id}) }}" style="padding-top:4%; font-size:1.7vw;" onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='#000'">
-									<i class="bi bi-tools"></i>
+								<a data-bs-toggle="tooltip" title="Delete" data-bs-placement="right" href="{{ path('product_delete', {'id': product.id}) }}" style="color:#000;padding-top:4%; font-size:1.5vw;" onmouseover="this.style.color='#d43133'" onmouseout="this.style.color='#000'">
+									<i class="bi bi-trash3-fill"></i>
 								</a>
-
-								<a class="btn btn-outline-danger btn-lg  rounded-pill" data-bs-toggle="tooltip" data-bs-placement="right" href="{{ path('product_delete', {'id': product.id}) }}">Delete</a>
+							{% endif %}
 							</div>
 						</td>
+						{% endif %}
 					</tr>
 				{% endfor %}
 			</tbody>

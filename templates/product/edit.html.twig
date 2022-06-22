@@ -2,66 +2,93 @@
 
 {% block body %}
     {{ form_start(form) }}
-    <div class="form-group">
-        <label for="name">Name:</label>
-        {{ form_widget(form.name,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Product name'
-            }
-        }) }}
-    </div>
-    <div class="form-group">
-        <label for="unitPrice">Unit price:</label>
-        {{ form_widget(form.unitPrice,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Unit price'
-            }
-        }) }}
-    </div>
-    <div class="form-group">
-        <label for="quantity">Quantity:</label>
-        {{ form_widget(form.quantity,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Quantity'
-            }
-        }) }}
-    </div>
-    <div class="form-group">
-        <label for="category">Category:</label>
-        {{ form_widget(form.category,{
-            'attr':{
-                'class':'form-control'
-            }
-        }) }}
-    </div>
-        <div class="form-group">
-        <label for="description">Description:</label>
-        {{ form_widget(form.description,{
-            'attr':{
-                'class':'form-control',
-                'placeholder': 'Description'
-            }
-        }) }}
-    </div>
-    <div class="form-group">
-        <label for="manufacturer">Manufacturer:</label>
-        {{ form_widget(form.manufacturer,{
-            'attr':{
-                'class':'form-control'
-            }
-        }) }}
-    </div>
-    <div class="form-group">
-        <label for="image">Manufacturer:</label>
-        {{ form_widget(form.image,{
-            'attr':{
-                'class':'form-control'
-            }
-        }) }}
-    </div>
-    <input type="submit" name="edit_product" value="Edit" class="btn btn-primary"/>
+    <div class="row" style=" margin-bottom:2%; margin-top:1.5%; ">
+
+		<div class="d-flex justify-content-center">
+			<div class="col-4">
+				<img src="https://tinyurl.com/2w6j6h42" class="card-img-top" style=" object-fit:cover; height:100%;" alt="...">
+			</div>
+
+			<div class="col-5 text-white form-group" style="">
+				<div class="bg-dark" style="padding-top:15%;  height:100% ">
+					<div class="text-center" style="font-family: 'Bubblegum Sans', cursive; font-size:3vw;">
+						Change Product's Information
+					</div>
+					<div class="row" style="margin: 4% 10%;">
+						<div class="col-6">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="name">Name:</label>
+							{{ form_widget(form.name,{
+                    'attr':{
+                        'class':'form-control',
+                        'placeholder': 'Product name'
+                    }
+                }) }}
+						</div>
+						<div class="col-6">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="unitPrice">Unit price:</label>
+							{{ form_widget(form.unitPrice,{
+                    'attr':{
+                        'class':'form-control',
+                        'placeholder': 'Unit price'
+                    }
+                }) }}
+						</div>
+					</div>
+					<div class="row" style="margin: 4% 10%;">
+						<div class="col-4">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="quantity">Quantity:</label>
+							{{ form_widget(form.quantity,{
+                    'attr':{
+                        'class':'form-control',
+                        'placeholder': 'Quantity'
+                    }
+                }) }}
+						</div>
+						<div class="col-4">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="category">Category:</label>
+							{{ form_widget(form.category,{
+                    'attr':{
+                        'class':'form-control'
+                    }
+                }) }}
+						</div>
+						<div class="col-4">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="manufacturer">Manufacturer:</label>
+							{{ form_widget(form.manufacturer,{
+                    'attr':{
+                        'class':'form-control'
+                    }
+                }) }}
+						</div>
+					</div>
+					<div class="row" style="margin: 4% 10%;">
+						<div class="col-12">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="description">Description:</label>
+							{{ form_widget(form.description,{
+                    'attr':{
+                        'class':'form-control',
+                        'placeholder': 'Description'
+                    }
+                }) }}
+						</div>
+						<div class="col-12 " style="margin-top: 4% ;">
+							<label style="font-family: 'Bubblegum Sans', cursive; font-size:2vw;" for="image">Image:</label>
+							{{ form_widget(form.image,{
+                    'attr':{
+                        'class':'form-control'
+                    }
+                }) }}
+						</div>
+					</div>
+					<div class="d-flex justify-content-around">
+						<a href="{{ path('product_list') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style=" border-radius:14px; float: left; border: solid 2px white;  margin-bottom: 4%;  font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+							Go Back</a>
+						<input class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Update" style=" border-radius:14px; float: right;  margin-bottom: 4%; border: solid 2px white; font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" type="submit" name="edit_product" value="Edit">
+					</input>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
     {{ form_end(form) }}
 {% endblock %}

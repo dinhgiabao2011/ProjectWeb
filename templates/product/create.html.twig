@@ -1,7 +1,7 @@
 {% extends 'base2.html.twig' %}
 {% block body %}
 	{{ form_start(form) }}
-	<div class="row" style="  margin-bottom:2%; margin-top:1.5%; ">
+	<div class="row" style=" margin-bottom:2%; margin-top:1.5%; ">
 
 		<div class="d-flex justify-content-center">
 			<div class="col-4">
@@ -10,7 +10,7 @@
 
 			<div class="col-5 text-white form-group" style="">
 				<div class="bg-dark" style="padding-top:15%;  height:100% ">
-					<div class="" style="font-family: 'Bubblegum Sans', cursive; margin-left:21%; font-size:3vw;">
+					<div class="text-center" style="font-family: 'Bubblegum Sans', cursive;font-size:3vw;">
 						Create A New Product
 					</div>
 					<div class="row" style="margin: 4% 10%;">
@@ -78,17 +78,14 @@
                     }
                 }) }}
 						</div>
-
 					</div>
 					<div class="d-flex justify-content-around">
-						<a href="{{ path('app_home') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style=" float: left; border: solid 2px white;  margin-bottom: 4%;  font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
+						<a href="{{ path('app_home') }}" class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Back" style=" border-radius:14px; float: left; border: solid 2px white;  margin-bottom: 4%;  font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" name="back" value="Back">
 							Go Back</a>
-						<input class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Click To Add" style=" float: right;  margin-bottom: 4%; border: solid 2px white; font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" type="submit" name="create_product" value="Create">
+						<input class="btn btn-outline-light btn-md" data-bs-toggle="tooltip" data-bs-placement="right" title="Click To Add" style=" border-radius:14px; float: right;  margin-bottom: 4%; border: solid 2px white; font-size:1.5vw; font-family: 'Bubblegum Sans', cursive;" type="submit" name="create_product" value="Create">
 					</input>
 				</div>
-
 			</div>
-
 		</div>
 	</div>
 </div>
